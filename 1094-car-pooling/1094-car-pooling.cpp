@@ -3,7 +3,7 @@ public:
     bool carPooling(vector<vector<int>>& trips, int capacity) {
         
         int n=trips.size();
-        vector<int> a(1005, 0);
+        vector<int> a(1001, 0);
         
         for(int i=0; i<trips.size(); i++){
             a[trips[i][1]]+=trips[i][0];
