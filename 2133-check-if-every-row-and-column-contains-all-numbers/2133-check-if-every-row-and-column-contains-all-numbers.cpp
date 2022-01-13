@@ -11,8 +11,7 @@ public:
             }
             for(int i=1; i<=n; i++){
                 if(m[i]<=0 or m[i]>1){
-                    f1 = 0;
-                    break;
+                    return 0;
                 }
             }
         }
@@ -23,13 +22,12 @@ public:
             }
             for(int i=1; i<=n; i++){
                 if(m[i]<=0 or m[i]>1){
-                    f2 = 0;
+                    return 0;
                 }
             }
         }
-        if(f1 and f2)
+        
             return 1;
-        else return 0;
         
     }
 };
