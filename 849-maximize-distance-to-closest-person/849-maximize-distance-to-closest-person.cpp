@@ -17,10 +17,8 @@ public:
                     curr_1=i;
                 }
             }
-            //cout<<curr_1<<" "<<curr_1_next<<" -- ";
             if(found_1 and found_1_next){
                 ans=max(ans, (abs(curr_1_next - curr_1))/2);
-                //cout<<"ans-"<<ans<<"//";
             } 
             
         }
