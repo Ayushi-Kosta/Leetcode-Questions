@@ -9,7 +9,7 @@ public:
             }
             else i++;
         }
-        //cout<<pos;
+        
         if(pos>=n){
             return 1;
         }
