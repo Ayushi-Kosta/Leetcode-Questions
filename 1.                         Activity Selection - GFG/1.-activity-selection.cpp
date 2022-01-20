@@ -24,18 +24,18 @@ class Solution
         int c=1;
         int e=v[0].second, j=0;
         for(int i=1; i<n; i++){
-            // if(e<=v[i].first){
-            //     e=v[i].second;
-            //     c++;
-            // }
+            if(e<v[i].first){
+                e=v[i].second;
+                c++;
+            }
             // if(v[i].first>=v[j].second){
             //     j=i;
             //     c++;
             // }
-            if(v[i].first>v[j].second){
-                j=i;
-                c++;
-            }
+            // if(v[i].first>v[j].second){
+            //     j=i;
+            //     c++;
+            // }
         }
         return c;
     }
