@@ -28,28 +28,7 @@ class Solution {
         vector<int> ans;
         for(int i=0; i<n; i++)
             vis[i]=0;
-            
-        //for(int i=0; i<n; i++){
-        //    if(!vis[i]){
-                //bfs(adj, 0, vis, ans);
-        //    }
-        //}
-        
-        queue<int> q;
-        vis[0]=1;
-        q.push(0);
-        while(!q.empty()){
-            int x = q.front(); q.pop();
-            ans.push_back(x);
-            for(int i : adj[x]){
-                if(!vis[i]){
-                    q.push(i);
-                    vis[i]=1;    
-                }
-                
-            }
-        }
-        
+        bfs(adj, 0, vis, ans);
         return ans;
     }
 };
