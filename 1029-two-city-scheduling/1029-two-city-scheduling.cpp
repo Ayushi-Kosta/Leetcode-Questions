@@ -6,7 +6,6 @@ public:
     int twoCitySchedCost(vector<vector<int>>& costs) {
         vector<int> a, b;
         int n=costs.size();
-        vector<vector<int>> q;
         sort(costs.begin(), costs.end(), mycomp);
         int ans=0, i=0;
         n=n/2;
