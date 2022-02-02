@@ -8,7 +8,7 @@ public:
         int j = 0, n = s.size(), m = p.size(), perfect = 0;
         for(int i = 0; i<n; i++) {
             sm[s[i]]++;
-            if(i-j+1 == m) {
+            if(i-j+1 == m or (sm==pm) ) {
                 if(sm==pm) indices.push_back(j);
                 sm[s[j]]--;
                 if(sm[s[j]] == 0) 
