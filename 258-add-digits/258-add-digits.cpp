@@ -1,21 +1,14 @@
 class Solution {
 public:
-    int s(int num){
-        int sum=0;
-        while(num){
-            sum+=(num%10);
-            num/=10;
+    int addDigits(int num) {
+        if(num==0){
+            return 0;
         }
-        if(sum<10){
-            return sum;
+        else if(num%9==0){
+            return 9;
         }
         else{
-            return s(sum);
+            return num%9;
         }
-        
-        
-    }
-    int addDigits(int num) {
-        return s(num);
     }
 };
