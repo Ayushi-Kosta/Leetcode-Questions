@@ -13,9 +13,7 @@ public:
         if(s<INT_MIN or s>INT_MAX){
             return 0;
         }
-        // if(sign=='-') return -s;
-        // else{
-            return s;
-        // }
+        
+        return s;
     }
 };
