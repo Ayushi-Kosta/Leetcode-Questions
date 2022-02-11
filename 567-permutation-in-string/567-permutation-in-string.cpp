@@ -8,8 +8,6 @@ public:
         }
         for(int i=0; i<n1; i++){
             m1[s1[i]]++;
-        }
-        for(int i=0; i<n1; i++){
             m2[s2[i]]++;
         }
         int i=0, j=n1;
