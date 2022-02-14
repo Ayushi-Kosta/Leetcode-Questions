@@ -12,7 +12,8 @@ public:
         }
         for(char x : digits){
             int z = x-'0';
-            for(int i = d.size(); i>0; i--){
+            int b =d.size();
+            for(int i =0; i<b; i++){
                 string a = d.front(); d.pop_front();
                 for(char y: seq[z]){
                     d.push_back(a+y);
