@@ -19,6 +19,7 @@ public:
             curr--;
             v.pop_back();
         }
+        
         bool t=1;
         if(v.size()==0){
             return "0";
