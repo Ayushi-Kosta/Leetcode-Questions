@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<string> a;
-    void st(string s, int i){
+    void st(string &s, int i){
         if(i==s.size()){
             a.push_back(s);
             return;
@@ -11,7 +11,7 @@ public:
             s[i]=toupper(s[i]);
             st(s, i+1);    
         }
-        
+        s[i]=tolower(s[i]);
         
     }
     vector<string> letterCasePermutation(string s) {
