@@ -3,7 +3,6 @@ public:
     vector<string> a;
     void st(string s, int i){
         if(i==s.size()){
-            // a.insert(s);
             a.push_back(s);
             return;
         }  
@@ -20,13 +19,8 @@ public:
         for(int i=0; i<n; i++){
             s[i] = tolower(s[i]);
         }
-        // a.insert(s);
-        // a.push_back(s);
         st(s, 0);
-        // vector<string> v;
-        // for(auto &c: a){
-        //     v.push_back(c);
-        // }
+        
        
         return a;
     }
