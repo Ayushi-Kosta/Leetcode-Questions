@@ -11,7 +11,6 @@
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k){
-        if(!head or k==0) return head;
         int n = 0;
         ListNode* a = head;
         while(a!=NULL){
@@ -19,7 +18,7 @@ public:
             n++;
         }
         a=head;
-        if(k==n or n==0) return head;
+        if(k==0 or k==n or n==0) return head;
         k=k%n;
         int q = n-k-1;
         //cout<<"k "<<k<<" ";
@@ -28,14 +27,12 @@ public:
             q--;
             a=a->next;
         }
-        //cout<<"-"<<a->val<<"-";
         ListNode *w = a->next, *h = w;
         a->next=NULL;
         while(w and w->next!=NULL){
             w=w->next;  
         }
         if(w) w->next = head;
-        //cout<<n<<" ";
         return h;
     }
 };
