@@ -25,15 +25,7 @@ public:
                 s.push(pushed[i]);
                     i++;
             }
-//             else if(i<n){
-                
-//             }
-            
         }
-        // while(!s.empty()){
-        //     cout<<s.top()<<" ";
-        //     s.pop();
-        // }
         return s.empty();
     }
 };
