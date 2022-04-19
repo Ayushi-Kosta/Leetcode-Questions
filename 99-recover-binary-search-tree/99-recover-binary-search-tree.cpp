@@ -22,12 +22,9 @@ public:
                 first=prev;
             }
         }
-        // if(first!=NULL){
-            if(prev!=NULL and prev->val>root->val){
-                second=root;
-                // return;
-            } 
-        // }
+        if(prev!=NULL and prev->val>root->val){
+            second=root;
+        } 
         prev=root;
         inor(root->right);
     }
