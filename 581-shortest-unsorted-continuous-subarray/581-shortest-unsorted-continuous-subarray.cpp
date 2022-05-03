@@ -3,15 +3,23 @@ public:
     int findUnsortedSubarray(vector<int>& nums) {
         vector<int> v = nums;
         sort(v.begin(), v.end());
-        int n=nums.size(), i=0, j=n-1;
-        while(i<n and nums[i]==v[i]){
-            i++;
+        int n=nums.size(), i=0, j=n-1, end=-1, start=0, maxi=nums[0], mini=nums[n-1];
+        for(i=1; i<n; i++){
+            if(maxi>nums[i]){
+                end=i;
+            }
+            else{
+                maxi=nums[i];
+            }
         }
-        while(j>=0 and nums[j]==v[j]){
-            j--;
+        for(i=n-2; i>=0; i--){
+            if(mini<nums[i]){
+                start=i;
+            }
+            else{
+                mini=nums[i];
+            }
         }
-        // cout<<i<<" "<<j<<" \ ";
-        if(i==n and j==-1) return 0;
-        return (j-i+1);
+        return (end-start+1);
     }
 };
