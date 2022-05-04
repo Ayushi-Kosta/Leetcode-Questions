@@ -3,18 +3,19 @@ public:
     int maxOperations(vector<int>& nums, int k) {
         sort(nums.begin(), nums.end());
         int n=nums.size(), i=0, j=n-1, cou=0;
-        while(i<j){
-            if(nums[i]+nums[j]==k){
-                i++;
-                j--;
+        unordered_map<int, int> m;
+        while(i<n){
+            if(m.find(k-nums[i])!=m.end()){
                 cou++;
-            }
-            else if(nums[i]+nums[j]>k){
-                j--;
+                m[k-nums[i]]--;
+                if(m[k-nums[i]]==0){
+                    m.erase(k-nums[i]);
+                }
             }
             else{
-                i++;
+                m[nums[i]]++;
             }
+            i++;
         }
         return cou;
     }
