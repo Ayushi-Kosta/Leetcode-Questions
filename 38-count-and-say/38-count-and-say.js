@@ -6,20 +6,19 @@ var countAndSay = function(n) {
   let str = '1';
 
   for (let i = 2; i <= n; i += 1) {
-    const arr = [];
-    let start = 0;
-    let current = start;
+    const ans = [];
+    let start = 0, current_string = start;
 
-    while (current < str.length) {
-      while (str[current] === str[start]) {
-        current += 1;
+    while (current_string < str.length) {
+      while (str[current_string] === str[start]) {
+        current_string += 1;
       }
 
-      arr.push(`${current - start}${str[start]}`);
-      start = current;
+      ans.push(`${current_string - start}${str[start]}`);
+      start = current_string;
     }
 
-    str = arr.join('');
+    str = ans.join('');
   }
 
   return str;
