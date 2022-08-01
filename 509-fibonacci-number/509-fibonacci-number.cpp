@@ -1,15 +1,14 @@
 class Solution {
 public:
     int fib(int n) {
-        int c=0, b=1, i=2;
-        if(n==0) return c;
-        if(n==1) return b;
-        int a[n+1];
-        a[0]=0, a[1]=1;
-        while(i<=n){
-            a[i]=a[i-1]+a[i-2];
-            i++;
+        int dp[n+1];
+        if(n==0) return 0;
+        dp[0]=0;
+        dp[1]=1;
+        //bottom up solution
+        for(int i=2; i<=n; i++){
+            dp[i]=dp[i-1]+dp[i-2];
         }
-        return a[n];
+        return dp[n];
     }
 };
