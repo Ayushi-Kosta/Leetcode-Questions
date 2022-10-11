@@ -24,6 +24,7 @@ public:
         
         for(int i=0; i<n; i++){
             if(mini[i]<nums[i] and maxi[i]>nums[i] and mini[i]<maxi[i] and mini[i]!=INT_MAX and maxi[i]!=INT_MIN){
+                // cout<<mini[i]<<" "<<nums[i]<<" "<<maxi[i]<<"\n";
                 return true;
             }
         }
