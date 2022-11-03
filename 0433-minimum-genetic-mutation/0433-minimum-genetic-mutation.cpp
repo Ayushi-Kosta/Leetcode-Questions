@@ -1,31 +1,51 @@
 class Solution {
 public:
-    int minMutation(string start, string end, vector<string>& bank) {
-        unordered_set<string> dict(bank.begin(), bank.end());
-        if (!dict.count(end)) return -1;
-        unordered_set<string> bset, eset, *set1, *set2;
-        bset.insert(start), eset.insert(end);
-        int step = 0, n = start.size();
-        while (!bset.empty() and !eset.empty()) {
-            if (bset.size() <= eset.size())
-                set1 = &bset, set2 = &eset;
-            else set2 = &bset, set1 = &eset;
-            unordered_set<string> tmp;
-            step ++;
-            for (auto itr = set1->begin(); itr != set1->end(); ++itr) {
-                for (int i = 0; i < n; ++i) {
-                    string dna = *itr;
-                    for (auto g : string("ATGC")) {
-                        dna[i] = g;
-                        if (set2->count(dna)) return step;
-                        if (dict.count(dna)) {
-                            tmp.insert(dna);
-                            dict.erase(dna);
-                        }
-                    }
+    int minMutation(string startGene, string endGene, vector<string>& bank) {
+        unordered_set<string> banks, visited;
+        for(int i=0; i<bank.size(); i++){
+            banks.insert(bank[i]);
+        }
+        if(banks.find(endGene)==banks.end()){
+            return -1;
+        }
+        queue<string> q;
+        int ans=0;
+        q.push(startGene);
+        while(!q.empty()){
+            int size = q.size();
+            
+            while(size--){
+                string cur = q.front();
+                q.pop();
+                visited.insert(cur);
+                if(cur==endGene){
+                    return ans;
                 }
+                for(int i=0; i<8; i++){
+                    
+                    string c = cur;
+                    
+                    c[i]='A';
+                    if(visited.find(c)==visited.end() and banks.find(c)!=banks.end()){
+                        q.push(c);
+                    }
+                    c[i]='C';
+                    if(visited.find(c)==visited.end() and banks.find(c)!=banks.end()){
+                        q.push(c);
+                    }
+                    c[i]='G';
+                    if(visited.find(c)==visited.end() and banks.find(c)!=banks.end()){
+                        q.push(c);
+                    }
+                    c[i]='T';
+                    if(visited.find(c)==visited.end() and banks.find(c)!=banks.end()){
+                        q.push(c);
+                    }
+                    
+                }   
             }
-            *set1 = tmp;
+            ans++; 
+                        
         }
         return -1;
     }
