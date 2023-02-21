@@ -1,14 +1,24 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
         int i=0, n=nums.size();
-        while(i<n-1){
-            if(nums[i]!=nums[i+1]){
-                return nums[i];
+        int l=0, h=n-1;
+        while(l<h){
+            int mid = (l+h)/2;
+            if(mid%2!=0){
+                mid--;
             }
-            i+=2;
+            if(mid>0 and mid<n and nums[mid]!=nums[mid-1] and nums[mid]!=nums[mid+1]){
+                return nums[mid];
+            }
+            if(mid<n-1 and nums[mid]==nums[mid+1]){
+                l=mid+2;
+            }
+            else{ 
+                h=mid-2;
+            }
+            
         }
-        return nums[n-1];
+        return nums[l];
     }
 };
