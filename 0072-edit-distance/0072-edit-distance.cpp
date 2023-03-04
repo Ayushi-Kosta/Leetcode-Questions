@@ -24,7 +24,7 @@ public:
         int m = word1.size(), n = word2.size();
         vector<vector<int>> v(m+1, vector<int> (n+1,-1));
         
-        // write recursion code first
+        
         return help(word1, word2, 0, 0, v);
         
     }
